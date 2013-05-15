@@ -10,7 +10,7 @@ import os
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
-FILES = ['foo', 'bar', 'bat', 'banana']
+FILES = ['foo', 'bar']
 
 # Backup existing files in OLDDIR
 if not os.path.exists(OLDDIR):
