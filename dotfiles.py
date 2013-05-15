@@ -29,15 +29,8 @@ for file in FILES:
     print 'New Path: %s' % file_back
     print 'symlink %s to %s' % (file_link, file_orig)
 
-    #os.rename(file_orig, file_back)
-    #os.symlink(file_link, file_orig)
-
-
-#print HOMEDIR
-#print DIR
-#print OLDDIR
-#os.symlink()
-#os.rename()
+    os.rename(file_orig, file_back)
+    os.symlink(file_link, file_orig)
 
 # done, this script is done.
 
