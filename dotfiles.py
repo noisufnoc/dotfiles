@@ -10,7 +10,7 @@ import os
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
-FILES = ['foo', 'bar']
+FILES = ['foo', 'bar', 'banana']
 
 # Backup existing files in OLDDIR
 if not os.path.exists(OLDDIR):
@@ -21,18 +21,23 @@ if not os.path.exists(DIR):
     os.makedirs(DIR)
 
 for file in FILES:
+    # Iterate through file list
     file_orig = '%s/.%s' % (HOMEDIR, file)
     file_back = '%s/%s' % (OLDDIR, file)
     file_link = '%s/%s' % (DIR, file)
 
-    if not os.path.islink(file_orig):
-        print 'symlink %s to %s' % (file_link, file_orig)
-        print 'I\'m moving %s' % file_orig
-        print 'New Path: %s' % file_back
+    if os.path.exists(file_orig) and not os.path.islink(file_orig):
+        # If the target exists and isn't a link, then back up the real file and do work.
+        print 'I\'m moving %s to %s' % (file_orig, file_back)
         os.rename(file_orig, file_back)
+        print 'I\'m symlinking %s to %s' % (file_link, file_orig)
+        os.symlink(file_link, file_orig)
+    elif not os.path.exists(file_orig):
+        # File doesn't exist, but I want a symlink anyway
+        print 'I\'m symlinking %s to %s' % (file_link, file_orig)
         os.symlink(file_link, file_orig)
     else:
-        print '%s exists! moving on' % file_link
+        print 'Symlink %s exists! Moving on...' % file_link
 
 
 
