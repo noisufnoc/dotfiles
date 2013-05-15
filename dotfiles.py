@@ -25,12 +25,17 @@ for file in FILES:
     file_back = '%s/%s' % (OLDDIR, file)
     file_link = '%s/%s' % (DIR, file)
 
-    print 'I\'m moving %s' % file_orig
-    print 'New Path: %s' % file_back
     print 'symlink %s to %s' % (file_link, file_orig)
 
-    os.rename(file_orig, file_back)
-    os.symlink(file_link, file_orig)
+    if not os.path.exists(file_back):
+        print 'I\'m moving %s' % file_orig
+        print 'New Path: %s' % file_back
+        os.rename(file_orig, file_back)
+
+    try:
+        os.symlink(file_link, file_orig)
+    except:
+        print '%s exists! moving on' % file_link
 
 # done, this script is done.
 
