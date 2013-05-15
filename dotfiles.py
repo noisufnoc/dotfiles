@@ -10,7 +10,7 @@ import os
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
-FILES = ['foo', 'bar', 'banana']
+FILES = ['foo', 'bar', 'bat', 'banana']
 
 # Backup existing files in OLDDIR
 if not os.path.exists(OLDDIR):
@@ -26,6 +26,10 @@ for file in FILES:
     file_back = '%s/%s' % (OLDDIR, file)
     file_link = '%s/%s' % (DIR, file)
 
+    if not os.path.exists(file_link):
+        print 'You listed file \'%s\' that doesn\'t exist in %s, Skipping...' % (file, DIR)
+        continue
+
     if os.path.exists(file_orig) and not os.path.islink(file_orig):
         # If the target exists and isn't a link, then back up the real file and do work.
         print 'I\'m moving %s to %s' % (file_orig, file_back)
@@ -38,8 +42,6 @@ for file in FILES:
         os.symlink(file_link, file_orig)
     else:
         print 'Symlink %s exists! Moving on...' % file_link
-
-
 
 # done, this script is done.
 
