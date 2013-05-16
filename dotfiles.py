@@ -46,6 +46,12 @@ for file in FILES:
     else:
         print 'Symlink %s exists! Moving on...' % file_link
 
+# I use vundle, you should too.
+
+if os.path.exists('%s/vim/bundle/vundle' % DIR):
+    os.system('git clone https://github.com/gmarik/vundle.git %s/vim/bundle/vundle' % DIR)
+    os.system('vim +BundleInstall +qall')
+
 # done, this script is done.
 
 
