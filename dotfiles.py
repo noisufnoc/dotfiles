@@ -9,6 +9,12 @@ __author__ = 'noisufnoc'
 # TODO: clone oh-my-zsh repo
 
 import os
+import sys
+import platform
+
+if sys.version_info < (2, 6):
+    print "I require 2.6 or higher"
+    sys.exit(1)
 
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
@@ -62,5 +68,17 @@ for file in FILES:
 if os.path.exists('%s/vim/bundle' % DIR):
     os.system('git clone https://github.com/gmarik/vundle.git %s/vim/bundle/vundle' % DIR)
     os.system('vim +BundleInstall +qall')
+
+# I really like zsh and oh-my-zsh
+
+if not os.path.exists('/bin/zsh') or os.path.exists('/usr/bin/zsh'):
+    if platform.linux_distribution()[0] == 'Ubuntu':
+        os.system('sudo apt-get install -y zsh')
+    elif platform.linux_distribution()[0] == 'CentOS':
+        os.system('sudo yum install -y zsh')
+    else:
+        print 'I don\'t know what distro you\'re running, install zsh manually!'
+
+os.system('git clone https://github.com/robbyrussell/oh-my-zsh.git %s/.oh-my-zsh' % HOMEDIR)
 
 # done, this script is done.
