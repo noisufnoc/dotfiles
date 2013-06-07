@@ -10,8 +10,8 @@ Installation
 ------------
 
 ``` bash
-git clone git://github.com/noisufnoc/dotfiles ~/dotfiles
-cd ~/dotfiles
+git clone git://github.com/noisufnoc/dotfiles ~/.dotfiles
+cd ~/.dotfiles
 # cp your dotfiles from your homedir
 chmod +x dotfiles.py
 ./dotfiles.py

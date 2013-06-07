@@ -5,15 +5,26 @@ __author__ = 'noisufnoc'
 # Link dotfiles to .dotfiles for managing with git
 # Similar to https://github.com/michaeljsmalley/dotfiles, but in py.
 
+# TODO: zsh installer
+# TODO: clone oh-my-zsh repo
+
 import os
 
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
 FILES = [
-    'foo',
-    'bar'
+    'bashrc',
+    'fonts',
+    'inputrc',
+    'screenrc',
+    'ttytterrc',
+    'ttytterkey',
+    'vim',
+    'vimrc',
+    'zshrc'
 ]
+
 
 # Backup existing files in OLDDIR
 if not os.path.exists(OLDDIR):
@@ -48,10 +59,8 @@ for file in FILES:
 
 # I use vundle, you should too.
 
-if os.path.exists('%s/vim/bundle/vundle' % DIR):
+if os.path.exists('%s/vim/bundle' % DIR):
     os.system('git clone https://github.com/gmarik/vundle.git %s/vim/bundle/vundle' % DIR)
     os.system('vim +BundleInstall +qall')
 
 # done, this script is done.
-
-
