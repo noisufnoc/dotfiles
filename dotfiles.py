@@ -19,6 +19,7 @@ if sys.version_info < (2, 6):
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
+UID = os.getegid()
 FILES = [
     'bashrc',
     'fonts',
@@ -78,6 +79,8 @@ if not os.path.exists('/bin/zsh') or os.path.exists('/usr/bin/zsh'):
         os.system('sudo yum install -y zsh')
     else:
         print 'I don\'t know what distro you\'re running, install zsh manually!'
+
+    os.system('chsh -s `which zsh` %s' % UID)
 
 os.system('git clone https://github.com/robbyrussell/oh-my-zsh.git %s/.oh-my-zsh' % HOMEDIR)
 
