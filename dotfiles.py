@@ -1,12 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 
 __author__ = 'noisufnoc'
 
 # Link dotfiles to .dotfiles for managing with git
 # Similar to https://github.com/michaeljsmalley/dotfiles, but in py.
-
-# TODO: zsh installer
-# TODO: clone oh-my-zsh repo
 
 import os
 import sys
@@ -19,16 +16,19 @@ if sys.version_info < (2, 6):
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
-UID = os.getegid()
 FILES = [
-    'bashrc',
+    'earthquake',
     'fonts',
+    'i3',
+    'i3status.conf',
     'inputrc',
+    'jira-url',
     'screenrc',
     'ttytterrc',
     'ttytterkey',
     'vim',
     'vimrc',
+    'Xdefaults',
     'zshrc'
 ]
 
@@ -79,8 +79,6 @@ if not os.path.exists('/bin/zsh') or os.path.exists('/usr/bin/zsh'):
         os.system('sudo yum install -y zsh')
     else:
         print 'I don\'t know what distro you\'re running, install zsh manually!'
-
-    os.system('chsh -s `which zsh` %s' % UID)
 
 os.system('git clone https://github.com/robbyrussell/oh-my-zsh.git %s/.oh-my-zsh' % HOMEDIR)
 
