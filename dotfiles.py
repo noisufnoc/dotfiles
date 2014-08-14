@@ -5,8 +5,9 @@ __author__ = 'noisufnoc'
 # Link dotfiles to .dotfiles for managing with git
 # Similar to https://github.com/michaeljsmalley/dotfiles, but in py.
 
-# TODO: zsh installer
-# TODO: clone oh-my-zsh repo
+# TODO improve zsh installer
+# TODO put private dotfiles in private repo, publish public safe stuff
+# TODO probably should obey pep8
 
 import os
 import sys
@@ -29,10 +30,12 @@ FILES = [
     'screenrc',
     'ttytterrc',
     'ttytterkey',
+    'turses',
     'vim',
     'vimrc',
     'virtualenvs',
-    'Xdefaults',
+    'Xresources',
+    'zshenv',
     'zshrc'
 ]
 
