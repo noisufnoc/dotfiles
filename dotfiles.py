@@ -21,19 +21,18 @@ HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
 FILES = [
-    'earthquake',
     'fonts',
     'i3',
     'i3status.conf',
     'inputrc',
     'jira-url',
     'screenrc',
-    'ttytterrc',
-    'ttytterkey',
+    'tmux.conf',
     'turses',
     'vim',
     'vimrc',
     'virtualenvs',
+    'weechat',
     'Xresources',
     'zshenv',
     'zshrc'
@@ -75,7 +74,7 @@ for file in FILES:
 
 if os.path.exists('%s/vim/bundle' % DIR):
     os.system('git clone https://github.com/gmarik/vundle.git %s/vim/bundle/vundle' % DIR)
-    os.system('vim +BundleInstall +qall')
+    os.system('vim +PluginInstall +qall')
 
 # I really like zsh and oh-my-zsh
 
