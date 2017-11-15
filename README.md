@@ -4,7 +4,7 @@ Dotfiles
 
 His script was written in bash, I chose to re-write it in Python.
 
-For security reasons, my actual dotfile repo is private.  Sorry ;-)
+For security reasons, my secrets repo is private.  Sorry ;-)
 
 Installation
 ------------
