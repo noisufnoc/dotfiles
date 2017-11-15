@@ -13,7 +13,7 @@ tmux has-session -t _default || tmux new-session -s _default -d
 
 # present menu for user to choose which workspace to open
 PS3="Please choose your session: "
-options=($(tmux list-sessions -F "#S") "NEW SESSION" "BASH" "donatello" "michelangelo" "phonehome")
+options=($(tmux list-sessions -F "#S") "NEW SESSION" "michelangelo" "donatello" "phonehome" "BASH" )
 echo "Available sessions"
 echo "------------------"
 echo " "
@@ -26,7 +26,7 @@ do
             break
             ;;
     	"donatello")    
- 	    ssh -i $SKELETON_KEY mike@$DONATELLO -t tmux -u attach -t weechat
+ 	    ssh -i $SKELETON_KEY mike@$DONATELLO
 	    break;;
     	"michelangelo")    
  	    ssh -i $SKELETON_KEY mike@$MICHELANGELO -t tmux -u attach -t shell
