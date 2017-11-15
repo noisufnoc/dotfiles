@@ -1,6 +1,10 @@
 #!/bin/sh 
 export PATH=$PATH:/usr/local/bin
 
+# I have to source my zshenv in order to use the env vars below
+source ~/.zshenv
+# There might be a better way to do this.
+
 # abort if we're already inside a TMUX session
 [ "$TMUX" == "" ] || exit 0 
 
