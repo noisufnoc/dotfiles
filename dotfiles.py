@@ -1,21 +1,18 @@
 #!/usr/bin/env python2
 
+import os
+import sys
+from platform import system, system_alias, release, version, linux_distribution
+
 __author__ = 'noisufnoc'
 
 # Link dotfiles to .dotfiles for managing with git
 
 # TODO improve zsh installer
-# TODO put private dotfiles in private repo, publish public safe stuff
-# TODO private dotfiles could be in a folder, that's cloned from priv repo
 # TODO probably should obey pep8
 # TODO logging
 # TODO test mode
-# TODO move to github
 # TODO move to python3
-
-import os
-import sys
-from platform import system, system_alias, release, version, linux_distribution
 
 if sys.version_info < (2, 6):
     print "I require 2.6 or higher"
@@ -39,13 +36,11 @@ else:
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
-SECRETS = 'url of secret repo'  # TODO set this, obv
+SECRETS = 'git@bitbucket.org:noisufnoc/secrets.git'
 
 # here you should build the list of secret files from priv git repo
-# if not os.path.exists('secret'):
-#    os.makedirs('secret')
-#    os.system('git clone %s' % SECRETS)
-
+if not os.path.exists('secret'):
+    os.system('git clone %s secret' % SECRETS)
 
 # I need to get the files in the folders and build the FILES list
 
