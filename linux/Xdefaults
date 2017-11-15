@@ -1,0 +1,15 @@
+URxvt*font:		xft:Roboto Mono for Powerline:antialias=true:hinting=true:autohint=true:pixelsize=12,xft:DejaVu Sans Mono for Powerline:antialias=true:hinting=true:autohint=true:pixelsize=13,xft:Inconsolata for Powerline:antialias=true:hinting=true:autohint=true:pixelsize=13
+URxvt.background:       black
+URxvt.foreground:       white
+URxvt.scrollBar:        false
+URxvt.tintColor:        white
+URxvt.fading:           15
+URxvt.fadeColor:        black
+URxvt.transparent:	true
+URxvt.shading:          20
+URxvt.inheritPixmap:    true
+URxvt.pointerColor:     black
+URxvt.pointerColor2:    white
+URxvt*termName:		xterm-256color
+!URxvt*termName:		rxvt-unicode-256color
+!URxvt*title:		urxvt

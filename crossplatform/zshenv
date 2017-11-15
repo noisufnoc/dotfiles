@@ -1,0 +1,11 @@
+# use this for multiple zshenv files
+# find a better way to do this
+[[ -r ~/.zshenv-secret ]] && . ~/.zshenv-secret
+[[ -r ~/.zshenv-linux ]] && . ~/.zshenv-linux
+[[ -r ~/.zshenv-osx ]] && . ~/.zshenv-osx
+
+export PATH=$HOME/bin:$PATH; # Add my bin to $PATH
+export EDITOR=vim;
+
+#export SPLUNK_HOME=/Applications/Splunk
+#export PATH=$PATH:$SPLUNK_HOME/bin

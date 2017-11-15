@@ -1,0 +1,4 @@
+# Set CLICOLOR if you want Ansi Colors in iTerm2
+export CLICOLOR=1
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2
+alias findbigfiles='sudo du -hs * | gsort -rh'

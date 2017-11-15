@@ -10,6 +10,8 @@ __author__ = 'noisufnoc'
 # TODO probably should obey pep8
 # TODO logging
 # TODO test mode
+# TODO move to github
+# TODO move to python3
 
 import os
 import sys

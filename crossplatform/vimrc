@@ -1,0 +1,143 @@
+set nocompatible
+filetype off
+" syntax enable
+
+set rtp+=~/.vim/bundle/vundle/
+" set term=rxvt-unicode
+set termencoding=utf-8
+
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Plugin 'gmarik/vundle'
+
+" The bundles you install will be listed here
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'klen/python-mode'
+Plugin 'jamessan/vim-gnupg'
+Plugin 'godlygeek/tabular'
+Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'sukima/xmledit'
+Plugin 'neilagabriel/vim-geeknote'
+Plugin 'yorokobi/vim-splunk'
+
+" colorscheme stuff
+let g:solarized_termtrans=1
+colorscheme solarized
+set background=dark
+
+filetype plugin indent on
+syntax enable
+
+" Take me to your <leader>
+let mapleader=","
+
+noremap <Leader>W :w !sudo tee % > /dev/null
+noremap QQ :qa!<CR>
+
+" groups
+augroup vimrc_autocmds
+	autocmd!
+	" highlight characters past column 120
+	autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
+        autocmd FileType python match Excess /\%120v.*/
+	autocmd FileType python set nowrap
+augroup END
+
+" airline setup
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
+" NERDtree
+map <F2> :NERDTreeToggle<CR>
+" open on start
+autocmd vimenter * NERDTree | wincmd p
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+" close if only NERDtree is open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+" Key maps
+nnoremap <Left> :echoe "H!"<CR>
+nnoremap <Right> :echoe "L!"<CR>
+nnoremap <Up> :echoe "K!"<CR>
+nnoremap <Down> :echoe "J!"<CR>
+
+" Better window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
+" Ben Folds
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
+" Split
+set splitbelow
+set splitright
+
+" GPG
+let g:GPGDebugLevel = 2
+let g:GPGDebugLog = 'gpg.log'
+let g:GPGPreferArmor = 1
+
+" Python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 1
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+" Geeknote
+let g:GeeknoteFormat="markdown"
+
+" I can't spell
+set spell spelllang=en_us
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab

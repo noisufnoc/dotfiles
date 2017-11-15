@@ -1,0 +1,12 @@
+#!/bin/bash
+# This hook is run after every virtualenv is activated.
+
+#PS1="$_OLD_VIRTUAL_PS1"
+#_OLD_RPROMPT="$RPROMPT"
+#RPROMPT="%{${fg_bold[white]}%}(env: %{${fg[green]}%}`basename \"$VIRTUAL_ENV\"`%{${fg_bold[white]}%})%{${reset_color}%} $RPROMPT"
+
+# Change into directory and grab github's .gitignore
+#proj_name=$(echo $VIRTUAL_ENV|awk -F'/' '{print $NF}')
+#if [ -d $HOME/code/py/$proj_name ]; then
+#	cd $HOME/code/py/$proj_name
+#fi

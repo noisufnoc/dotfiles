@@ -1,0 +1,30 @@
+vbell off
+vbell_msg "Ring"
+
+# detach on hangup
+autodetach on
+
+# don't display copyright page
+startup_message off
+
+# scroll back
+defscrollback 1000
+
+# setup the caption
+hardstatus alwayslastline "%{-b gk}%-w%{+b kg}%50>%n %t%{-b gk}%+w %=%C%<"
+
+# right/left bindings
+bindkey "^[[c" next
+bindkey "^[[d" prev
+bindkey "^[[b" focus
+
+#bind H source {envRoot}/dotfiles/screen.scrollback-edit
+#bind ^B source {envRoot}/dotfiles/screen.scrollback-urlview
+#bind b source {envRoot}/dotfiles/screen.scrollback-urlview
+
+# Set the altscreen so that when you quit vi, it will go back to
+# what it was before
+altscreen on
+
+#screen -t ttytter	0	ttytter
+shell -$SHELL

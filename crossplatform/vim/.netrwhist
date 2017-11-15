@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/miwalker/foo'
+let g:netrw_dirhist_2='/home/miwalker/Downloads/foo'
+let g:netrw_dirhist_3='/home/miwalker/src/INCIbot-env/lib/python2.7/site-packages/jira'
+let g:netrw_dirhist_4='/home/miwalker/src/giantsquid-bot-env/giantsquid-bot/gsbot'
+let g:netrw_dirhist_5='/home/miwalker/src/CatFactsBot-env/CatFactsBot/.git'
+let g:netrw_dirhist_6='/home/miwalker/foo'
+let g:netrw_dirhist_7='/home/miwalker'
+let g:netrw_dirhist_8='/home/miwalker/Documents'

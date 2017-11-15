@@ -1,0 +1,3 @@
+plugins=(archlinux debian docker django git heroku history-substring-search jira node pip reddit rvm screen tmux vi-mode virtualenvwrapper vundle web-search yum)
+
+alias open='xdg-open'

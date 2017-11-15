@@ -1,0 +1,17 @@
+#!/bin/bash
+# This hook is run after a new virtualenv is activated.
+
+# Create project work directory
+proj_name=$(echo $VIRTUAL_ENV|awk -F'/' '{print $NF}')
+mkdir $HOME/code/py/$proj_name
+#add2virtualenv $HOME/projects/$proj_name
+
+# Change into directory and grab github's .gitignore
+cd $HOME/code/py/$proj_name
+curl https://raw.githubusercontent.com/github/gitignore/master/Python.gitignore -o .gitignore
+echo "\n# My custom stuff\n*.swp\n.ropeproject/" >> .gitignore
+
+# Get git setup
+git init
+git config user.name "Mike Walker"
+git config user.email "noisufnoc@gmail.com"
