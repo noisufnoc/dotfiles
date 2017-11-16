@@ -203,6 +203,7 @@ for_window [class="URxvt"] border none
 for_window [class="Termite"] border none
 for_window [class="vlc"] border none
 for_window [class="Chromium"] border none
+for_window [class="Firefox"] border none
 for_window [title="Google Hangouts - noisufnoc@gmail.com"] move container to workspace 4
 assign [title="Google Hangouts - noisufnoc@gmail.com"] $workspace4
 #for_window [window_role="pop-up"] floating enable
