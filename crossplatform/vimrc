@@ -27,6 +27,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'sukima/xmledit'
 Plugin 'neilagabriel/vim-geeknote'
 Plugin 'yorokobi/vim-splunk'
+Plugin 'Yggdroot/indentLine'
 
 " colorscheme stuff
 let g:solarized_termtrans=1
