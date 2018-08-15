@@ -36,7 +36,7 @@ else:
 HOMEDIR = os.path.expanduser('~')
 DIR = '%s/.dotfiles' % HOMEDIR
 OLDDIR = '%s/.dotfiles_old' % HOMEDIR
-SECRETS = 'git@bitbucket.org:noisufnoc/secrets.git'
+SECRETS = 'https://noisufnoc@bitbucket.org/noisufnoc/secrets.git'
 
 # here you should build the list of secret files from priv git repo
 if not os.path.exists('secret'):
