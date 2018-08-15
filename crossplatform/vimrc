@@ -138,6 +138,9 @@ let g:pymode_folding = 0
 " Geeknote
 let g:GeeknoteFormat="markdown"
 
+" indentLine
+let g:indentLine_enabled = 0
+
 " I can't spell
 set spell spelllang=en_us
 
