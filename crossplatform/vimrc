@@ -140,6 +140,7 @@ let g:GeeknoteFormat="markdown"
 
 " indentLine
 let g:indentLine_enabled = 0
+map <F3> :IndentLinesToggle
 
 " I can't spell
 set spell spelllang=en_us
