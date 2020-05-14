@@ -17,7 +17,8 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'klen/python-mode'
+Plugin 'python-mode/python-mode'
+" Plugin 'klen/python-mode'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'godlygeek/tabular'
 Plugin 'AndrewRadev/splitjoin.vim'
@@ -25,7 +26,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sukima/xmledit'
-Plugin 'neilagabriel/vim-geeknote'
+" Plugin 'neilagabriel/vim-geeknote'
 Plugin 'yorokobi/vim-splunk'
 Plugin 'Yggdroot/indentLine'
 
@@ -55,6 +56,9 @@ augroup END
 " airline setup
 set laststatus=2
 let g:airline_powerline_fonts = 1
+
+" python-mode
+" let g:python_python = 'python2'
 
 " NERDtree
 map <F2> :NERDTreeToggle<CR>
@@ -107,7 +111,13 @@ let g:GPGPreferArmor = 1
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_run = 1
+let g:pymode_run_bind = '<leader>r'
+
 let g:pymode_rope = 1
+let g:pymode_rope_completion = 1
+let g:pymode_rope_show_doc_bind = '<C-c>d'
+set completeopt=menuone,noinsert
 
 " Documentation
 let g:pymode_doc = 1

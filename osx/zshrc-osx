@@ -1,3 +1,7 @@
 plugins=(adb brew docker geeknote git history-substring-search nmap node osx pip reddit splunk sudo tmux vi-mode virtualenvwrapper vundle web-search)
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 source ~/.iterm2_shell_integration.`basename $SHELL`
+
+alias twitter_itsMikeWalker='rainbowstream --twitter-auth ~/.rainbow_oauth_itsMikeWalker'
+alias twitter_noisufnoc='rainbowstream --twitter-auth ~/.rainbow_oauth_noisufnoc'
+

@@ -31,6 +31,9 @@ do
     	"michelangelo")    
  	    ssh -i $SKELETON_KEY mike@$MICHELANGELO -t tmux -u attach -t shell
 	    break;;
+    	"michelangelo x11")    
+ 	    ssh -Y -i $SKELETON_KEY mike@$MICHELANGELO -t tmux -u attach -t shell
+	    break;;
     	"phonehome")    
 	    ssh -i $SKELETON_KEY -p 2222 mike@$SSH_JUMPBOX -t 'ssh mike@$MICHELANGELO -t tmux -u attach -t shell'
 	    break;;
