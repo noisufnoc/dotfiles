@@ -13,6 +13,9 @@ __author__ = 'noisufnoc'
 # TODO logging
 # TODO test mode
 # TODO move to python3
+# TODO set zsh to default shell
+# TODO install things like tmux
+# TODO ensure zsh plugins work on new system
 
 if sys.version_info < (2, 6):
     print "I require 2.6 or higher"
